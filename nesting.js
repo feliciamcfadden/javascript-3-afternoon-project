@@ -51,6 +51,17 @@ var employees = [
 */
 
 //Code Here
+const employeeUpdater = ()=>{
+  for (i=0; i < employees.length; i++){
+    if(employees[i].firstName === 'Theo'){
+      employees.splice(i,1)
+    }else if (employees[i].firstName === 'Lorie'){
+      employees[i].department ='HR'
+    }
+  }
+  return employees
+}
+
 
 
 
@@ -67,6 +78,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
+
+const removeDuplicates = () => {
+  for (i=0; i < workplaceAccidents.length; i++){
+    for (j=i+1; j <workplaceAccidents.length; j++){
+      if(workplaceAccidents[i] === workplaceAccidents[j]){
+        workplaceAccidents.splice(j,1)
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 //Code Here
 
@@ -139,6 +161,16 @@ var myCar = {
 */
 
 //Code Here
+function recordCleaner(myCar){
+  for (let prop in myCar["accident"]){
+    for (let prop2 in myCar["accidents"][prop]){
+      if(prop2 === "atFaultForAccident"){
+        myCar["accidents"][prop][prop2] = false
+      }
+    }
+  }
+  return myCar
+}
 
 
 
@@ -158,5 +190,19 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+
+function looper(numsArr) {
+  for (let i = 0; i < numsArr.length; i++){
+    for (let j = numsArr[i].length - 1; j >= 0; j--){
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = "even"
+      } else if (numsArr[i][j] % 2 !== 0) {
+        numsArr[i][j] = "odd"
+      }
+    }
+  }
+  return numsArr
+}
+
 
 
